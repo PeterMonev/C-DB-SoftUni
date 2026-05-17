@@ -1,0 +1,11 @@
+ALTER TABLE Users
+DROP CONSTRAINT PK_Users;
+
+ALTER TABLE Users
+ADD CONSTRAINT PK_Users PRIMARY KEY (Id);
+
+ALTER TABLE Users
+ADD CONSTRAINT UQ_Users_Username UNIQUE (Username);
+
+ALTER TABLE Users
+ADD CONSTRAINT CK_Users_UsernameLength CHECK (LEN(Username) >= 3);
